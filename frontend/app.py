@@ -47,12 +47,26 @@ st.markdown("""
 # LOAD FILES
 # ==================================================
 
-df = pd.read_csv(
-    "../data/processed/clustered_student.csv"
+from pathlib import Path
+import pandas as pd
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+csv_path = (
+    BASE_DIR
+    / "data"
+    / "processed"
+    / "clustered_student.csv"
 )
 
-model = joblib.load(r"C:\Users\hindu\Desktop\student-performance-reccomendation\models\kmeans_model.pkl")
-scaler = joblib.load(r"C:\Users\hindu\Desktop\student-performance-reccomendation\models\scaler.pkl")
+df = pd.read_csv(csv_path)
+
+model = joblib.load(
+    BASE_DIR / "models" / "kmeans_model.pkl"
+)
+scaler = joblib.load(
+    BASE_DIR / "models" / "scaler.pkl"
+)
 
 # ==================================================
 # HEADER
