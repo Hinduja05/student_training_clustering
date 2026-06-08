@@ -47,9 +47,9 @@ st.markdown("""
 # LOAD FILES
 # ==================================================
 
-df = pd.read_csv(df = pd.read_csv(
+df = pd.read_csv(
     "../data/processed/clustered_student.csv"
-))
+)
 
 model = joblib.load(r"C:\Users\hindu\Desktop\student-performance-reccomendation\models\kmeans_model.pkl")
 scaler = joblib.load(r"C:\Users\hindu\Desktop\student-performance-reccomendation\models\scaler.pkl")
